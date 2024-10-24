@@ -1,6 +1,7 @@
 # Learning from unavoidable mistakes
 My second game, made in Godot
 https://gurkgamer.itch.io/learning-from-unavoidable-mistakes
+
 Submission for Novice Summer Jam Series 2024: Mini Jam 2
 https://itch.io/jam/nsjs-2024-jam-2
 
