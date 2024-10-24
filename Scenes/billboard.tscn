@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://hx4jxe6ddvyd"]
+
+[ext_resource type="Script" path="res://Scripts/billboard.gd" id="1_l7qlc"]
+[ext_resource type="Texture2D" uid="uid://bjq7psr2v4uj3" path="res://Images/Sprites/billboard.png" id="1_meiac"]
+[ext_resource type="Texture2D" uid="uid://bwwky0c31wt44" path="res://Images/Sprites/run_ability.png" id="2_g2bij"]
+[ext_resource type="Texture2D" uid="uid://dhk6fmsaohmey" path="res://Images/Sprites/jump_ability.png" id="4_ry7a8"]
+[ext_resource type="Texture2D" uid="uid://krcm2445i8b0" path="res://Images/Sprites/dash_ability.png" id="5_0u6p3"]
+[ext_resource type="Texture2D" uid="uid://cleflq0sxginj" path="res://Images/Sprites/double_jump_ability.png" id="6_f5omp"]
+
+[node name="BillBoard" type="Node2D"]
+script = ExtResource("1_l7qlc")
+
+[node name="Billboard" type="Sprite2D" parent="."]
+scale = Vector2(1.64286, 1.64286)
+texture = ExtResource("1_meiac")
+
+[node name="Title" type="Label" parent="."]
+offset_left = -101.0
+offset_top = -51.0
+offset_right = -52.0
+offset_bottom = -37.0
+theme_override_font_sizes/font_size = 10
+text = "What if I..."
+
+[node name="Ability_Name" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -50.0
+offset_top = -51.0
+offset_right = 102.0
+offset_bottom = -37.0
+theme_override_font_sizes/font_size = 10
+text = "Run!"
+
+[node name="Controls" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -62.0
+offset_top = 37.0
+offset_right = 63.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 10
+text = "Press Z"
+horizontal_alignment = 1
+
+[node name="RunAbility" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("2_g2bij")
+
+[node name="JumpAbility" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_ry7a8")
+
+[node name="DashAbility" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("5_0u6p3")
+
+[node name="DoubleJumpAbility" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("6_f5omp")
+
+[node name="AllowSkipTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="AllowSkipTimer" to="." method="_on_allow_skip_timer_timeout"]
